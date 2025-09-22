@@ -1,2 +1,2 @@
 # DevOps-Internship-Elavate-Labs
-Continuous Integration/Continuous Deployment    
+Continuous Integration/Continuous Deployment

@@ -8,9 +8,35 @@ on:
 
 # Define the jobs that will run
 jobs:
+  test:
+    # Use the latest version of Ubuntu as the runner
+    runs-on: ubuntu-latest
+
+    # Define the steps for this job
+    steps:
+      # 1. Check out your repository code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Set up Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      # 3. Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # 4. Run tests
+      - name: Run tests
+        run: npm test
+
   build-and-push:
     # Use the latest version of Ubuntu as the runner
     runs-on: ubuntu-latest
+    # This job depends on the 'test' job
+    needs: test
 
     # Define the steps for this job
     steps:

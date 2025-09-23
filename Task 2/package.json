@@ -1,0 +1,13 @@
+{
+  "name": "simple-app",
+  "version": "1.0.0",
+  "description": "A simple Node.js app for Jenkins.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

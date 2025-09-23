@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Run in Task 2 Folder') {
+            steps {
+                // Change directory to the 'task 2' folder
+                dir('task 2') {
+                    stage('Build') {
+                        echo 'Building...'
+                        sh 'npm install'
+                    }
+                    stage('Test') {
+                        echo 'Testing...'
+                        sh 'npm test'
+                    }
+                    stage('Deploy') {
+                        echo 'Deploying with Docker...'
+                        sh 'docker build -t simple-node-app .'
+                        sh 'docker stop my-app || true'
+                        sh 'docker rm my-app || true'
+                        sh 'docker run -d --name my-app -p 8081:8080 simple-node-app'
+                    }
+                }
+            }
+        }
+    }
+}

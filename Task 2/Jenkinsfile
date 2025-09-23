@@ -4,29 +4,34 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                // This block runs all commands inside the 'Task 2' directory
                 dir('Task 2') {
                     echo 'Building application...'
-                    sh 'npm install'
+                    // Run npm install on Windows
+                    bat 'npm install'
                 }
             }
         }
+
         stage('Test') {
             steps {
                 dir('Task 2') {
                     echo 'Testing application...'
-                    sh 'npm test'
+                    // Run npm test on Windows
+                    bat 'npm test'
                 }
             }
         }
+
         stage('Deploy') {
             steps {
                 dir('Task 2') {
                     echo 'Deploying application with Docker...'
-                    sh 'docker build -t simple-node-app .'
-                    sh 'docker stop my-app || true'
-                    sh 'docker rm my-app || true'
-                    sh 'docker run -d --name my-app -p 8081:8080 simple-node-app'
+                    // Docker commands on Windows
+                    bat 'docker build -t simple-node-app .'
+                    // Windows batch doesn’t support "|| true", so use "|| exit 0"
+                    bat 'docker stop my-app || exit 0'
+                    bat 'docker rm my-app || exit 0'
+                    bat 'docker run -d --name my-app -p 8081:8080 simple-node-app'
                 }
             }
         }

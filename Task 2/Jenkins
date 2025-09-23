@@ -1,26 +1,32 @@
 pipeline {
-    agent any
+    agent any // Run on any available agent
 
     stages {
-        stage('Run in Task 2 Folder') {
+        stage('Build') {
             steps {
-                // Change directory to the 'task 2' folder
-                dir('task 2') {
-                    stage('Build') {
-                        echo 'Building...'
-                        sh 'npm install'
-                    }
-                    stage('Test') {
-                        echo 'Testing...'
-                        sh 'npm test'
-                    }
-                    stage('Deploy') {
-                        echo 'Deploying with Docker...'
-                        sh 'docker build -t simple-node-app .'
-                        sh 'docker stop my-app || true'
-                        sh 'docker rm my-app || true'
-                        sh 'docker run -d --name my-app -p 8081:8080 simple-node-app'
-                    }
+                // This block runs all commands inside the 'Task 2' directory
+                dir('Task 2') {
+                    echo 'Building application...'
+                    sh 'npm install'
+                }
+            }
+        }
+        stage('Test') {
+            steps {
+                dir('Task 2') {
+                    echo 'Testing application...'
+                    sh 'npm test'
+                }
+            }
+        }
+        stage('Deploy') {
+            steps {
+                dir('Task 2') {
+                    echo 'Deploying application with Docker...'
+                    sh 'docker build -t simple-node-app .'
+                    sh 'docker stop my-app || true'
+                    sh 'docker rm my-app || true'
+                    sh 'docker run -d --name my-app -p 8081:8080 simple-node-app'
                 }
             }
         }

@@ -5,7 +5,7 @@ const helmet = require('helmet');  // For security headers
 const cors = require('cors');      // For cross-origin support
 
 const app = express();
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8081;
 
 // --- Middleware ---
 app.use(express.json());   // Parse JSON requests

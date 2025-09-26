@@ -1,0 +1,9 @@
+This project is a demonstration of a standard Git workflow for managing a DevOps project.
+
+## Description
+The project includes a simple Python application and follows a branching strategy with `main`, `dev`, and `feature` branches.
+
+## How to Run
+To run the application, use the following command:
+```bash
+python app.py

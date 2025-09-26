@@ -36,4 +36,4 @@ All merges into protected branches were performed through Pull Requests on GitHu
 
 - On the `main` branch, a Git tag was created to permanently mark the stable release point in the project's history.
 - The new tag was pushed to the remote repository.
-- All project steps were fully documented in the main `README.md` file.
+- All project steps were fully documented in the main `report.md` file.

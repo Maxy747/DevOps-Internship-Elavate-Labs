@@ -12,7 +12,7 @@ The primary goal of this internship was to implement, automate, and manage infra
 
 The repository is organized into 8 individual folders, each corresponding to a major task completed during the internship.
 
-| Folder | Core Focus | Inferred Description (Customize This!) |
+| Task Name | Core Focus | Inferred Description (Customize This!) |
 | :--- | :--- | :--- |
 | **[Task 1]** | **Linux & Scripting Fundamentals** | Automating routine administrative tasks using **Bash** or **Python** scripting to manage system resources and logs. |
 | **[Task 2]** | **Infrastructure as Code (IaC) - Provisioning** | Defining and provisioning cloud resources (e.g., a VPC, EC2 instance, or S3 bucket) using **HashiCorp Configuration Language (HCL) / Terraform**. |

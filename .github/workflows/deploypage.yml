@@ -37,7 +37,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload contents of the 'Task 5' directory
-          path: './Task 5'
+          path: './Task 6'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

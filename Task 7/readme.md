@@ -17,4 +17,5 @@ The goal of this task was to install Netdata, a system monitoring tool, and visu
 
 ## Screenshot
 
-![Netdata Dashboard]
+[Netdata Dashboard]
+![SharedScreenshot1](https://github.com/user-attachments/assets/584f9031-3145-41a4-9cfb-86ab7094a263)

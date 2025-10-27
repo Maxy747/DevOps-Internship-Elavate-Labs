@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error - DevOps Project</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .error-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 2rem;
+        }
+
+        .error-container::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(239, 68, 68, 0.1) 0%, transparent 70%);
+            top: -300px;
+            left: -300px;
+            border-radius: 50%;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .error-container::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+            bottom: -200px;
+            right: -200px;
+            border-radius: 50%;
+            animation: pulse 4s ease-in-out infinite 2s;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.3; }
+        }
+
+        .error-content {
+            text-align: center;
+            z-index: 1;
+            max-width: 600px;
+        }
+
+        .error-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 2rem;
+            position: relative;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .error-icon svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 10px 30px rgba(239, 68, 68, 0.3));
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #991b1b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 1rem;
+            animation: glitch 3s ease-in-out infinite;
+        }
+
+        @keyframes glitch {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+        }
+
+        .error-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .error-message {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        .error-details {
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2.5rem;
+            text-align: left;
+        }
+
+        .error-details h3 {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .error-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .error-info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem;
+            background: var(--bg-dark);
+            border-radius: 6px;
+            font-size: 0.875rem;
+        }
+
+        .error-info-label {
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .error-info-value {
+            color: var(--text);
+            font-family: 'Monaco', 'Courier New', monospace;
+        }
+
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .terminal-box {
+            background: var(--bg-darker);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 2rem;
+            text-align: left;
+        }
+
+        .terminal-header {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .dot-red { background: #ef4444; }
+        .dot-yellow { background: #eab308; }
+        .dot-green { background: #22c55e; }
+
+        .terminal-content {
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .terminal-line {
+            margin-bottom: 0.5rem;
+        }
+
+        .terminal-prompt {
+            color: #22c55e;
+        }
+
+        .terminal-error {
+            color: #ef4444;
+        }
+
+        @media (max-width: 640px) {
+            .error-code {
+                font-size: 5rem;
+            }
+
+            .error-title {
+                font-size: 1.5rem;
+            }
+
+            .error-message {
+                font-size: 1rem;
+            }
+
+            .error-actions {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-content">
+            <div class="error-icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="#ef4444" stroke-width="2"/>
+                    <path d="M15 9l-6 6M9 9l6 6" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </div>
+
+            <div class="error-code" id="errorCode">404</div>
+            <h1 class="error-title" id="errorTitle">Pipeline Not Found</h1>
+            <p class="error-message" id="errorMessage">
+                The requested resource could not be located in our deployment pipeline. 
+                This could be due to a broken link, removed endpoint, or misconfigured route.
+            </p>
+
+            <div class="error-details">
+                <h3>Error Details</h3>
+                <div class="error-info">
+                    <div class="error-info-item">
+                        <span class="error-info-label">Status Code:</span>
+                        <span class="error-info-value" id="statusCode">404</span>
+                    </div>
+                    <div class="error-info-item">
+                        <span class="error-info-label">Timestamp:</span>
+                        <span class="error-info-value" id="timestamp">-</span>
+                    </div>
+                    <div class="error-info-item">
+                        <span class="error-info-label">Request Path:</span>
+                        <span class="error-info-value" id="requestPath">-</span>
+                    </div>
+                    <div class="error-info-item">
+                        <span class="error-info-label">Instance ID:</span>
+                        <span class="error-info-value" id="instanceId">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="error-actions">
+                <a href="index.html" class="btn btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                    Back to Home
+                </a>
+                <button onclick="window.history.back()" class="btn btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Go Back
+                </button>
+                <button onclick="window.location.reload()" class="btn btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+                    </svg>
+                    Retry
+                </button>
+            </div>
+
+            <div class="terminal-box">
+                <div class="terminal-header">
+                    <div class="terminal-dot dot-red"></div>
+                    <div class="terminal-dot dot-yellow"></div>
+                    <div class="terminal-dot dot-green"></div>
+                </div>
+                <div class="terminal-content">
+                    <div class="terminal-line"><span class="terminal-prompt">$</span> kubectl get pods</div>
+                    <div class="terminal-line terminal-error">Error: resource not found</div>
+                    <div class="terminal-line"><span class="terminal-prompt">$</span> checking deployment logs...</div>
+                    <div class="terminal-line">Status: <span class="terminal-error">404 NOT_FOUND</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dynamic error information
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set timestamp
+            const now = new Date();
+            document.getElementById('timestamp').textContent = now.toISOString();
+
+            // Set request path
+            document.getElementById('requestPath').textContent = window.location.pathname;
+
+            // Generate random instance ID
+            const instanceId = 'pod-' + Math.random().toString(36).substr(2, 9);
+            document.getElementById('instanceId').textContent = instanceId;
+
+            // Check for URL parameters to customize error
+            const urlParams = new URLSearchParams(window.location.search);
+            const errorCode = urlParams.get('code');
+            const errorType = urlParams.get('type');
+
+            if (errorCode) {
+                document.getElementById('errorCode').textContent = errorCode;
+                document.getElementById('statusCode').textContent = errorCode;
+
+                // Customize messages based on error code
+                switch(errorCode) {
+                    case '500':
+                        document.getElementById('errorTitle').textContent = 'Internal Server Error';
+                        document.getElementById('errorMessage').textContent = 'An unexpected error occurred in the deployment pipeline. Our DevOps team has been notified and is working on a fix.';
+                        break;
+                    case '503':
+                        document.getElementById('errorTitle').textContent = 'Service Unavailable';
+                        document.getElementById('errorMessage').textContent = 'The service is temporarily unavailable due to maintenance or high load. Please try again in a few moments.';
+                        break;
+                    case '403':
+                        document.getElementById('errorTitle').textContent = 'Access Forbidden';
+                        document.getElementById('errorMessage').textContent = 'You do not have permission to access this resource. Please check your credentials or contact the administrator.';
+                        break;
+                    case '401':
+                        document.getElementById('errorTitle').textContent = 'Unauthorized';
+                        document.getElementById('errorMessage').textContent = 'Authentication is required to access this resource. Please log in and try again.';
+                        break;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

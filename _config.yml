@@ -1,0 +1,3 @@
+# Tells Jekyll to ignore these folders
+exclude:
+  - "Task 1/node_modules/"

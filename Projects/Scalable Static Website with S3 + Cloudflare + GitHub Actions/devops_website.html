@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Pipeline Project</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 6v6l4 2"/>
+                </svg>
+                <span>DevOps Pro</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#docs">Documentation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Automated CI/CD Pipeline</span>
+                    <br>Built for Scale
+                </h1>
+                <p class="hero-subtitle">
+                    A comprehensive DevOps solution featuring containerization, automated testing,
+                    and seamless deployment workflows for modern cloud infrastructure.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#docs" class="btn btn-primary">View Documentation</a>
+                    <a href="https://github.com/Maxy747/DevOps-Internship-Elavate-Labs" class="btn btn-secondary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                        </svg>
+                        GitHub Repo
+                    </a>
+                </div>
+            </div>
+            <div class="hero-graphic">
+                <div class="pipeline-viz">
+                    <div class="pipeline-step" style="animation-delay: 0s;">
+                        <div class="step-icon">📝</div>
+                        <div class="step-label">Code</div>
+                    </div>
+                    <div class="pipeline-arrow">→</div>
+                    <div class="pipeline-step" style="animation-delay: 0.2s;">
+                        <div class="step-icon">🔨</div>
+                        <div class="step-label">Build</div>
+                    </div>
+                    <div class="pipeline-arrow">→</div>
+                    <div class="pipeline-step" style="animation-delay: 0.4s;">
+                        <div class="step-icon">✓</div>
+                        <div class="step-label">Test</div>
+                    </div>
+                    <div class="pipeline-arrow">→</div>
+                    <div class="pipeline-step" style="animation-delay: 0.6s;">
+                        <div class="step-icon">🚀</div>
+                        <div class="step-label">Deploy</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🐳</div>
+                    <h3>Docker Containerization</h3>
+                    <p>Fully containerized microservices architecture with multi-stage builds and optimized image layers.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Kubernetes Orchestration</h3>
+                    <p>Auto-scaling deployment configurations with health checks, rolling updates, and zero-downtime releases.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>CI/CD Automation</h3>
+                    <p>GitHub Actions workflows with automated testing, security scanning, and deployment pipelines.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Monitoring & Logging</h3>
+                    <p>Prometheus metrics collection with Grafana dashboards and centralized ELK stack logging.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>Security Scanning</h3>
+                    <p>Integrated vulnerability scanning with Trivy and SAST analysis for container images and code.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">☁️</div>
+                    <h3>Cloud Native</h3>
+                    <p>Infrastructure as Code using Terraform with AWS/Azure deployment and multi-region support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="architecture" class="architecture">
+        <div class="container">
+            <h2 class="section-title">Architecture Overview</h2>
+            <div class="arch-content">
+                <div class="arch-diagram">
+                    <div class="arch-layer">
+                        <div class="layer-title">Application Layer</div>
+                        <div class="layer-boxes">
+                            <div class="arch-box">Frontend</div>
+                            <div class="arch-box">API Gateway</div>
+                            <div class="arch-box">Microservices</div>
+                        </div>
+                    </div>
+                    <div class="arch-layer">
+                        <div class="layer-title">Container Orchestration</div>
+                        <div class="layer-boxes">
+                            <div class="arch-box">Kubernetes Cluster</div>
+                            <div class="arch-box">Service Mesh</div>
+                        </div>
+                    </div>
+                    <div class="arch-layer">
+                        <div class="layer-title">Infrastructure</div>
+                        <div class="layer-boxes">
+                            <div class="arch-box">Load Balancer</div>
+                            <div class="arch-box">Database</div>
+                            <div class="arch-box">Cache</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="arch-details">
+                    <h3>Tech Stack</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Kubernetes</span>
+                        <span class="tech-tag">GitHub Actions</span>
+                        <span class="tech-tag">Terraform</span>
+                        <span class="tech-tag">Prometheus</span>
+                        <span class="tech-tag">Grafana</span>
+                        <span class="tech-tag">ELK Stack</span>
+                        <span class="tech-tag">AWS/Azure</span>
+                        <span class="tech-tag">Nginx</span>
+                        <span class="tech-tag">Redis</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="docs" class="docs">
+        <div class="container">
+            <h2 class="section-title">Quick Start Guide</h2>
+            <div class="docs-grid">
+                <div class="doc-card">
+                    <div class="doc-number">01</div>
+                    <h3>Clone Repository</h3>
+                    <code class="code-block">git clone https://github.com/yourrepo/devops-project.git</code>
+                </div>
+                <div class="doc-card">
+                    <div class="doc-number">02</div>
+                    <h3>Build Containers</h3>
+                    <code class="code-block">docker-compose up --build</code>
+                </div>
+                <div class="doc-card">
+                    <div class="doc-number">03</div>
+                    <h3>Deploy to K8s</h3>
+                    <code class="code-block">kubectl apply -f k8s/</code>
+                </div>
+                <div class="doc-card">
+                    <div class="doc-number">04</div>
+                    <h3>Access Dashboard</h3>
+                    <code class="code-block">kubectl port-forward svc/grafana 3000:3000</code>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 DevOps Project. Built with modern CI/CD practices.</p>
+            <div class="footer-links">
+                <a href="#overview">Documentation</a>
+                <a href="https://github.com">GitHub</a>
+                <a href="#docs">API Docs</a>
+                <a href="#features">License</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -91,10 +91,10 @@ jobs:
       run: |
         aws s3 sync "Projects/Scalable Static Website with S3 + Cloudflare + GitHub Actions" s3://static-website-devops-project --delete
 ```
-##Project Validation & Screenshots
+## Project Validation & Screenshots
 This section contains screenshots documenting the setup and successful execution of the project.
 
-###1. AWS S3 Bucket Setup
+### 1. AWS S3 Bucket Setup
 S3 Bucket Files:
 ![S3 bucket](https://github.com/user-attachments/assets/766db764-83e2-4347-96f3-42583cc60e09)
 
@@ -104,11 +104,11 @@ Static Website Hosting Enabled:
 Public Access Policy:
 ![S3 bucket public access](https://github.com/user-attachments/assets/d55d764e-9a8b-4c32-819f-50a6b6df9898)
 
-###2. AWS IAM Configuration
+### 2. AWS IAM Configuration
 IAM User for GitHub Actions:
 ![S3 bucket IAM user](https://github.com/user-attachments/assets/d17673f6-fca0-44f8-a629-8d5356d12b51)
 
-###3. GitHub Actions CI/CD Pipeline
+### 3. GitHub Actions CI/CD Pipeline
 Workflow .yml File:
 ![Github workflow yml](https://github.com/user-attachments/assets/ce5fbb0e-a2c7-4d65-b0c4-e74d169bfee8)
 
@@ -118,7 +118,7 @@ Workflow Run in Progress:
 Workflow Succeeded:
 ![Github workflow green](https://github.com/user-attachments/assets/0a5b7c42-fce0-473a-9fc2-367dec756eae)
 
-###4. Final Result: The Live Website
+### 4. Final Result: The Live Website
 Website successfully deployed and live at the S3 endpoint
 ![website](https://github.com/user-attachments/assets/0f524875-9ed5-4ae5-9de2-2454f62693ad)
 

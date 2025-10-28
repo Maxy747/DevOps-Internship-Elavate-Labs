@@ -1,0 +1,47 @@
+name: Project 4 - Docker CI Pipeline
+
+# 1. Trigger this workflow on every push to the main branch
+on:
+  push:
+    branches: [ "main", "master" ]
+    # Only run if files in this project's folder change
+    paths:
+      - 'project-4-docker-ci/**'
+
+jobs:
+  build_and_push:
+    runs-on: ubuntu-latest # Use a standard Linux runner
+
+    steps:
+      # 2. Get the code from your repository
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      # 3. Set up Python for the testing step
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      # 4. Install dependencies and run tests
+      - name: Install dependencies and run tests
+        run: |
+          pip install -r project-4-docker-ci/requirements.txt
+          pytest project-4-docker-ci/app_test.py
+      
+      # 5. Log in to Docker Hub
+      # This step only runs if the tests above pass
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      # 6. Build and push the Docker image
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./project-4-docker-ci  # Tell Docker where your Dockerfile is
+          push: true                     # Push the image to Docker Hub
+          # Name the image: your-username/your-repo-name
+          tags: ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest 

@@ -110,6 +110,7 @@ IAM User for GitHub Actions:
 
 ### 3. GitHub Actions CI/CD Pipeline
 Workflow .yml File: 
+
 ![Github workflow yml](https://github.com/user-attachments/assets/ce5fbb0e-a2c7-4d65-b0c4-e74d169bfee8)
 
 Workflow Run in Progress:

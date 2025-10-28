@@ -1,0 +1,14 @@
+# This file tells Kubernetes HOW to access the running app
+apiVersion: v1
+kind: Service
+metadata:
+  name: python-app-service
+spec:
+  # Use NodePort to easily access it from your local machine via Minikube
+  type: NodePort 
+  selector:
+    app: my-python-app # Must match the Deployment label
+  ports:
+    - protocol: TCP
+      port: 5000       # Internal port within the cluster
+      targetPort: 5000 # Port inside the container

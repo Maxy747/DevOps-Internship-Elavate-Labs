@@ -1,0 +1,21 @@
+# This file tells Kubernetes WHAT to run
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-app-deployment
+spec:
+  replicas: 2 # Run 2 copies
+  selector:
+    matchLabels:
+      app: my-python-app
+  template:
+    metadata:
+      labels:
+        app: my-python-app
+    spec:
+      containers:
+      - name: python-web-app
+        # Use your Docker Hub username and the repo name
+        image: mazinmazy/devops-internship-elavate-labs:latest
+        ports:
+        - containerPort: 5000

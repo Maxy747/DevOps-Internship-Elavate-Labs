@@ -109,7 +109,7 @@ IAM User for GitHub Actions:
 ![S3 bucket IAM user](https://github.com/user-attachments/assets/d17673f6-fca0-44f8-a629-8d5356d12b51)
 
 ### 3. GitHub Actions CI/CD Pipeline
-Workflow .yml File:
+Workflow .yml File: 
 ![Github workflow yml](https://github.com/user-attachments/assets/ce5fbb0e-a2c7-4d65-b0c4-e74d169bfee8)
 
 Workflow Run in Progress:

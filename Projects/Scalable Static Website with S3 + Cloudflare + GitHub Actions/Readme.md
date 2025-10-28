@@ -1,4 +1,4 @@
-# DevOps Internship - Project 6: Scalable Static Website
+# DevOps Internship - Project: Scalable Static Website
 
 This project implements **Project: Scalable Static Website with S3 + Cloudflare + GitHub Actions** from the Elevate Labs internship.
 

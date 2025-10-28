@@ -94,7 +94,7 @@ jobs:
 
 ---
 
-## Future Steps (Completing Project 6)
+## Future Steps (Completing Project)
 
 The original project scope also includes Cloudflare integration. This part has been skipped for now. The next steps would be:
 
@@ -121,3 +121,4 @@ To replicate this project:
 ## License
 
 This project is part of the Elevate Labs DevOps internship program.
+-Mazin

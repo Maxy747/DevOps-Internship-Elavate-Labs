@@ -23,4 +23,4 @@ jobs:
 
     - name: Deploy to S3
       run: |
-        aws s3 sync . s3://static-website-devops-project --delete
+       aws s3 sync "Projects/Scalable Static Website with S3 + Cloudflare + GitHub Actions" s3://static-website-devops-project --delete

@@ -4,7 +4,7 @@ This project implements **Project 4: CI/CD Pipeline with GitHub Actions & Docker
 
 The goal is to build a complete Continuous Integration (CI) pipeline that automatically tests a Python web application, builds it into a Docker image, and pushes the image to Docker Hub. It also includes steps for simulating Continuous Deployment (CD) by running the container locally using Minikube.
 
-[![Project 4 Docker CI Pipeline](https://github.com/Maxy747/DevOps-Internship-Elavate-Labs/actions/workflows/project-4-docker-ci-workflow.yml/badge.svg)](https://github.com/Maxy747/DevOps-Internship-Elavate-Labs/actions/workflows/project-4-docker-ci-workflow.yml)
+[![Project 4 Docker CI Pipeline]
 
 ---
 
@@ -119,22 +119,11 @@ jobs:
 
 ---
 
-## Project Validation (Screenshots)
+## Project Validation
 
-### 1. Local Docker Build & Run
-![Local Docker Run](path/to/your/local_docker_run.jpg)
-
-### 2. Successful GitHub Actions Workflow
-![GitHub Actions Success](path/to/your/github_actions_success.jpg)
-
-### 3. Image Pushed to Docker Hub
-![Docker Hub Image](path/to/your/docker_hub_image.jpg)
-
-### 4. Minikube Pods Running
-![Minikube Pods Running](path/to/your/minikube_pods.jpg)
-
-### 5. Application Accessed via Minikube Service
-![Minikube Service Access](path/to/your/minikube_service_access.jpg)
+### Application Accessed via Minikube Service
+![Minikube Service Access]
+![page new](https://github.com/user-attachments/assets/c9ebac3a-5c82-4825-9024-e908f3f6d32e)
 
 ---
 
